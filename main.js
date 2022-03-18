@@ -15,9 +15,9 @@ API.get("CarLicence").then((data) => makeTable(data.documents));
 
 let carArray = ["licence", "maker", "model", "owner", "price", "color"];
 
-const reloadPage = () => {
-  window.location.reload();
-};
+// const reloadPage = () => {
+//   window.location.reload();
+// };
 
 const addCar = (event) => {
   event.preventDefault();
@@ -53,7 +53,7 @@ const addCar = (event) => {
     });
   }
   formInput.submit();
-  reloadPage();
+  // reloadPage();
 };
 
 const makeTable = (items) => {
