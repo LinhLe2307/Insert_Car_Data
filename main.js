@@ -47,7 +47,7 @@ const addCar = (event) => {
       },
     },
   });
-  reloadPage(m)
+  reloadPage()
 };
 
 const makeTable = (items) => {
