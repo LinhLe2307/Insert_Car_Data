@@ -1,83 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #4ea9cc;
-    font-family: "Manrope", sans-serif;
-  }
-  
-  h2 {
-    margin: 2rem 0;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    background-color: white;
-    padding: 2rem;
-  }
-  
-  label {
-    display: inline-block;
-    width: 200px;
-  }
-  
-  .form_group {
-    margin: 1rem 0;
-  }
-  
-  input {
-    font-family: inherit;
-    padding: 0.625rem;
-    border: 1px solid grey;
-    border-radius: 2px;
-  }
-  
-  input[type="submit"],
-  input[type="reset"] {
-    background-color: #035a7c;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    border: none;
-    margin: 2rem 0 1rem;
-  }
-  
-  main {
-    display: flex;
-  }
-  
-  .input,
-  .output {
-    flex: 1;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  th {
-    font-weight: bold;
-    background-color: #4ea9cc;
-    color: white;
-    text-transform: uppercase;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  
-  .search_result {
-    display: block;
-    height: 24px;
-    padding: 20px 0;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border-radius: 20px 190px 20px 20px;
+  --background: linear-gradient(#a984d1, #ddaee3);
+  --font-color: #fff;
+  --button-color: #ca78e6;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: var(--background);
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  background-color: #564d58;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  color: var(--font-color);
+}
+
+h2 {
+  margin: 2rem 0;
+}
+.container {
+  max-width: 1200px;
+  /* background-color: #f5cdff; */
+  background-color: #ffffff;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+}
+
+.form_group {
+  margin: 1rem 0;
+}
+
+input,
+button {
+  font-family: inherit;
+  padding: 0.625rem;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+  color: var(--font-color);
+  /* background-color: #035a7c; */
+  background-color: var(--button-color);
+  padding: 1rem 2rem;
+  border: none;
+  margin: 2rem 0 1rem;
+  width: 8rem;
+  height: 3rem;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+  background-color: #6b4874;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 15rem;
+  height: 2.5rem;
+}
+
+main {
+  display: flex;
+}
+
+.output {
+  flex: 1;
+}
+
+.input-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 30rem;
+  height: 20rem;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+#inputData {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  font-weight: bold;
+  background: var(--background);
+  color: rgb(255, 254, 254);
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #e4d7d7;
+}
+
+.search_result {
+  display: block;
+  height: 24px;
+  padding: 20px 0;
+}
+
+#back-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* #add-button {
+  width: 3rem;
+  height: 3rem;
+  background-color: black;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+} */

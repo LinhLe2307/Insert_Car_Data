@@ -14,18 +14,19 @@
     <title>Cars</title>
   </head>
   <body>
-    <header class="container">
+    <header>
+      <h2>Linh Le</h2>
       <form id="SearchData">
         <div class="form_group">
           <label for="search">Search for licence number</label>
-          <input type="text" id="search" />
+          <input type="text" id="search" placeholder="Enter licence number" />
         </div>
       </form>
     </header>
     <main>
-      <section class="input container">
-        <h2>Insert car data</h2>
+      <section class="input-container">
         <form id="inputData">
+          <h2>Insert car data</h2>
           <div class="form_group">
             <label for="licence">Licence number</label
             ><input type="text" id="licence" />
@@ -51,12 +52,14 @@
             <input type="text" id="color" />
           </div>
           <input type="submit" value="Add car" />
-          <input type="reset" />
         </form>
+        <button id="back-button">Back</button>
       </section>
       <section class="output container">
         <h2>Cars database</h2>
         <div class="result"></div>
+        <button id="add-button">Add more</button>
+        <input type="reset" />
       </section>
     </main>
     <script type="module" src="main.js"></script>

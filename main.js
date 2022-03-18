@@ -3,6 +3,9 @@ let formInput = document.querySelector("#inputData");
 let resultTable = document.querySelector(".result");
 let searchInput = document.querySelector("#search");
 let resetInput = document.querySelector("input[type=reset]");
+let addButton = document.querySelector("#add-button");
+let inputContainer = document.querySelector(".input-container");
+let backButton = document.querySelector("#back-button");
 
 const API = new FetchWrapper(
   "https://firestore.googleapis.com/v1/projects/programmingjs-90a13/databases/(default)/documents/"
@@ -25,29 +28,32 @@ const addCar = (event) => {
   let price = Number(document.querySelector("#price").value);
   let color = document.querySelector("#color").value;
 
-  API.post("CarLicence", {
-    fields: {
-      licence: {
-        stringValue: licence,
+  if (licence && maker && model && owner && price && color) {
+    API.post("CarLicence", {
+      fields: {
+        licence: {
+          stringValue: licence,
+        },
+        maker: {
+          stringValue: maker,
+        },
+        model: {
+          stringValue: model,
+        },
+        owner: {
+          stringValue: owner,
+        },
+        price: {
+          integerValue: price,
+        },
+        color: {
+          stringValue: color,
+        },
       },
-      maker: {
-        stringValue: maker,
-      },
-      model: {
-        stringValue: model,
-      },
-      owner: {
-        stringValue: owner,
-      },
-      price: {
-        integerValue: price,
-      },
-      color: {
-        stringValue: color,
-      },
-    },
-  });
-  reloadPage()
+    });
+  }
+  formInput.submit();
+  reloadPage();
 };
 
 const makeTable = (items) => {
@@ -102,6 +108,16 @@ const resetForm = (e) => {
   resultTable.textContent = "";
 };
 
+const addForm = (e) => {
+  inputContainer.style.visibility = "visible";
+};
+
+const backPage = (e) => {
+  inputContainer.style.visibility = "hidden";
+};
+
 formInput.addEventListener("submit", addCar);
 searchInput.addEventListener("change", searchLicence);
 resetInput.addEventListener("click", resetForm);
+addButton.addEventListener("click", addForm);
+backButton.addEventListener("click", backPage);
